@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tT8EHVhvY4fDtx4UvIbFocgdzeVWbTNUfXavpDqkf2d3zBFLLEEzDC5SBVSxaw/JvJWcl83mkyuD4wnuSIh4GQ==",
+  "dgSpecHash": "iuvSRykJLlUa07sfmAZtL0luBlemadvGxXrUePpXtb2sTv2Ee9wjmXs0aNC9B3+IC7R3srKYmEcixI2T8yB9AA==",
   "success": true,
   "projectFilePath": "C:\\Users\\thimo\\git\\microservices-net-messaging\\MessageContracts\\PaymentMicroservice\\PaymentMicroservice.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\thimo\\.nuget\\packages\\masstransit.rabbitmq\\7.3.1\\masstransit.rabbitmq.7.3.1.nupkg.sha512",
     "C:\\Users\\thimo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.extensions.logging.abstractions\\2.1.1\\microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\thimo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\thimo\\.nuget\\packages\\newid\\3.0.3\\newid.3.0.3.nupkg.sha512",
     "C:\\Users\\thimo\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\thimo\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",

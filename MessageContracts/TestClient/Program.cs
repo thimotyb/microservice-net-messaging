@@ -7,7 +7,9 @@ await Task.Delay(3000); //because the consumers need to start first
 
 var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
 {
-    cfg.Host("localhost");
+    var event_bus = Environment.GetEnvironmentVariable("EVENT_BUS");
+    cfg.Host(event_bus);
+    Console.WriteLine($"Connecting to eventbus: {event_bus}");
     cfg.ReceiveEndpoint("invoice-service-created", e =>
     {
         e.UseInMemoryOutbox();
@@ -22,12 +24,11 @@ var keyCount = 0;
 
 try
 {
-    Console.WriteLine("Enter any key to send an invoice request or Q to quit.");
-    while (Console.ReadKey(true).Key != ConsoleKey.Q)
+    while (keyCount < 500)
     {
         keyCount++;
         await SendRequestForInvoiceCreation(busControl);
-        Console.WriteLine($"Enter any key to send an invoice request or Q to quit. {keyCount}");
+        await Task.Delay(2000);
     }
 }
 finally

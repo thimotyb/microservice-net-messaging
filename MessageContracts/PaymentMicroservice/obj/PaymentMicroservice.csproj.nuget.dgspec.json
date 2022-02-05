@@ -107,6 +107,10 @@
             "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[7.3.1, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.14.0, )"
             }
           },
           "imports": [

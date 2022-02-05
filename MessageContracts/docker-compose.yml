@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  invoicemicroservice:
+    image: ${DOCKER_REGISTRY-}invoicemicroservice
+    build:
+      context: .
+      dockerfile: InvoiceMicroservice/Dockerfile
+    environment:
+      EVENT_BUS: eventbus
+  testclient:
+    image: ${DOCKER_REGISTRY-}testclient
+    build:
+      context: .
+      dockerfile: TestClient/Dockerfile
+    environment:
+      EVENT_BUS: eventbus
+  paymentmicroservice:
+    image: ${DOCKER_REGISTRY-}paymentmicroservice
+    build:
+      context: .
+      dockerfile: PaymentMicroservice/Dockerfile
+    environment:
+      EVENT_BUS: eventbus
+  eventbus:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+

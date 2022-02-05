@@ -3,3 +3,10 @@
 ################################################################################
 
 /MessageContracts/InvoiceMicroservice/bin/Debug/net6.0
+/MessageContracts/InvoiceMicroservice/obj/Debug/net6.0
+/MessageContracts/MessageContracts/bin/Debug/net6.0
+/MessageContracts/MessageContracts/obj/Debug/net6.0
+/MessageContracts/PaymentMicroservice/bin/Debug/net6.0
+/MessageContracts/PaymentMicroservice/obj/Debug/net6.0
+/MessageContracts/TestClient/bin/Debug/net6.0
+/MessageContracts/TestClient/obj/Debug/net6.0/ref
