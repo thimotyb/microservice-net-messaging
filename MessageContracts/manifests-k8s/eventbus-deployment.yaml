@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f ../docker-compose.yml
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: eventbus
+  name: eventbus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: eventbus
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f ../docker-compose.yml
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: eventbus
+    spec:
+      containers:
+        - image: rabbitmq:3-management
+          livenessProbe:
+            exec:
+              command:
+                - curl
+                - -f
+                - http://localhost:15672
+            failureThreshold: 5
+            periodSeconds: 30
+            timeoutSeconds: 10
+          name: eventbus
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+          resources: {}
+      restartPolicy: Always
+status: {}
