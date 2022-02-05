@@ -8,6 +8,9 @@ services:
       dockerfile: InvoiceMicroservice/Dockerfile
     environment:
       EVENT_BUS: eventbus
+    restart: on-failure
+    depends_on:
+      - eventbus
   testclient:
     image: ${DOCKER_REGISTRY-}testclient
     build:
@@ -15,6 +18,9 @@ services:
       dockerfile: TestClient/Dockerfile
     environment:
       EVENT_BUS: eventbus
+    restart: on-failure
+    depends_on:
+      - eventbus
   paymentmicroservice:
     image: ${DOCKER_REGISTRY-}paymentmicroservice
     build:
@@ -22,9 +28,17 @@ services:
       dockerfile: PaymentMicroservice/Dockerfile
     environment:
       EVENT_BUS: eventbus
+    restart: on-failure
+    depends_on:
+      - eventbus
   eventbus:
     image: rabbitmq:3-management
     ports:
       - 5672:5672
       - 15672:15672
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:15672"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
 
