@@ -13,7 +13,7 @@ namespace PaymentMicroservice
 		{
 			var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
 			{
-				cfg.Host("10.0.75.1");
+				cfg.Host("localhost");
 				cfg.ReceiveEndpoint("payment-service", e =>
 				{
 					e.Consumer<InvoiceCreatedConsumer>(c =>

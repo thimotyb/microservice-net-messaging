@@ -13,7 +13,7 @@ namespace InvoiceMicroservice
 		{
 			var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
 			{
-				cfg.Host("10.0.75.1");
+				cfg.Host("localhost");
 				cfg.ReceiveEndpoint("invoice-service", e =>
 				{
 					e.ExchangeType = "direct";
