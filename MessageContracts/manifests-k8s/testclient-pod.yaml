@@ -13,7 +13,7 @@ spec:
     - env:
         - name: EVENT_BUS
           value: eventbus
-      image: testclient
+      image: thimoty/testclient
       name: testclient
       resources: {}
   restartPolicy: OnFailure

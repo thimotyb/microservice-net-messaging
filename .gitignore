@@ -10,3 +10,8 @@
 /MessageContracts/PaymentMicroservice/obj/Debug/net6.0
 /MessageContracts/TestClient/bin/Debug/net6.0
 /MessageContracts/TestClient/obj/Debug/net6.0/ref
+/.vs
+InvoiceMicroservice/obj
+PaymentMicroservice/obj
+MessageContracts/obj
+**.cache
